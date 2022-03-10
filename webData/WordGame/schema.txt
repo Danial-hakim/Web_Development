@@ -1,0 +1,20 @@
+create database word_game;
+
+grant all on word_game.* to 'worduser' identified by 'wordpasswd';
+
+mysql -u worduser -p word_game;
+password : wordpasswd
+
+create table leaderboard(
+    -> time_taken float,
+    -> name varchar(64) not null,
+    -> source varchar(64),
+    -> matches varchar(64));
+
+create table log(
+    -> result varchar(64),
+    -> source varchar(64),
+    -> matches varchar(64),
+    -> date timestamp default current_timestamp,
+    -> ip varchar(64),
+    -> browser varchar(300) );

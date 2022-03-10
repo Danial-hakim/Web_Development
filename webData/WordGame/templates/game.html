@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block body %}
+<p>     
+    The clock is ticking...
+</p>
+<p>
+    Your word is: <b> {{sourceWord}} </b>
+</p>
+<p>
+    Enter your seven words in this box, seperating each word by a space:
+</p>
+<p>
+    <form action="/gameWon" method="post">
+        <label for= "guesses">Put your 7 answers here seperate them with space</label><br>
+        <input type ="text" id="test" name="test"><br>
+        <input type="submit" value="Done !">
+    </form>  
+</p>
+{% endblock %}

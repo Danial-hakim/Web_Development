@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div style = display:{{option[0]}}>
+    <p> 
+        These words are invalid : {{invalidWords}}<br>
+        These letters are invalid : {{invalidLetters}}<br>
+        {{isSource}}<br>
+        {{isDups}}<br>
+        {{smallWord}}
+        <a href="/game"><button>Play Again !</button></a>
+    </p>
+</div>
+<div style = display:{{option[1]}}>
+    <p>
+        <b>
+            Congratulations! You took {{timeTaken}} seconds.<br>
+            You're a winner!
+        </b>
+    </p>
+    <p>
+        Well done , you've won! 
+    </p>
+    <p>
+        Enter your name:
+        <form action="/leaderboard" method="post">
+            <input placeholder="Name" autocomplete="off" id="name" name="name">
+            <input type="submit">
+        </form>
+    </p>
+</div>
+{% endblock %}
